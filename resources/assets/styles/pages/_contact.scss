@@ -1,0 +1,47 @@
+.contact{
+  &-welcome{
+    .container{
+      position: relative;
+    }
+    .welcome-left{
+      width: 580px;
+    }
+    .welcome-img{
+      background-image: url("data:image/svg+xml,%3Csvg width='564' height='480' viewBox='0 0 564 480' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M52.2864 79.4113C87.0857 51.7622 133.835 47.1494 178.184 50.0906C326.964 59.9579 435.503 -70.3992 526.495 54.4073C587.665 138.309 562.938 251.246 530.294 339.889C499.646 423.112 421.636 496.167 335.12 476.667C255.808 458.79 171.299 414.78 89.2308 370.556C-7.25454 318.563 -33.5272 147.593 52.2864 79.4113V79.4113Z' fill='%23FBFBFB'/%3E%3C/svg%3E%0A");
+      width: 564px;
+      height: 480px;
+      bottom: 50%;
+      transform: translateY(50%);
+    }
+  }
+  &-faq{
+    .faq-info{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .faq-accordion{
+      width: calc(50% - 15px);
+    }
+    .faq-heading{
+      padding-bottom: 32px;
+    }
+  }
+}
+
+.mapWrapper{
+  padding: 24px;
+  background-color: map-get($colors, light);
+  border-radius: 8px;
+  box-shadow: 0px 0px 47px #EAEAEA;
+  &-address{
+    color: map-get($colors, secondary-light);
+  }
+  .map{
+    width: 100%;
+    height: 325px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+}

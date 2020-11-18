@@ -1,0 +1,149 @@
+.blog{
+  padding: 80px 0 60px;
+  &-grid{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    .project{
+      margin-bottom: 30px;
+    }
+  }
+  &-heading{
+    @include h2;
+    text-transform: uppercase;
+    color: map-get($colors, secondary-light);
+    margin-bottom: 32px;
+  }
+}
+
+.filterBar{
+  list-style: none;
+  margin: 0 0 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  &-element{
+    margin-right: 24px;
+    position: relative;
+    &.open{
+      .filterBar-submenu{
+        visibility: visible;
+        opacity: 1;
+        color: map-get($colors, secondary-dark);
+      }
+      .filterBar-btn{
+        background-color: map-get($colors, accent-dark);
+        color: map-get($colors, light);
+      }
+    }
+  }
+  &-btn{
+    height: 32px;
+    width: 80px;
+    min-width: 80px;
+    position: relative;
+    z-index: 10;
+  }
+  &-submenu{
+    @include caption-text;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 0;
+    display: block;
+    text-align: left;
+    color: map-get($colors, secondary-dark);
+    background-color: map-get($colors, light);
+    width: 254px;
+    box-shadow: 0px 8px 8px rgba(50, 50, 71, 0.08), 0px 8px 16px rgba(50, 50, 71, 0.06);
+    border-radius: 8px;
+    padding: 24px;
+  }
+  &-title{
+    @include p2;
+    color: map-get($colors, accent-dark);
+    margin: 16px 0 8px;
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+  &-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &-archives, .wp-tag-cloud{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    li{
+      margin: 2px 16px 2px 0;
+    }
+    a{
+      display: block;
+      color: map-get($colors, secondary-dark);
+      padding: 2px 0;
+      text-decoration: none;
+      transition: 0.2s ease-in-out;
+      &:hover, &:focus{
+        color: map-get($colors, accent-dark);
+      }
+    }
+  }
+  .wp-tag-cloud{
+    flex-direction: column;
+    align-items: flex-start;
+    li, a{
+      width: 100%;
+    }
+  }
+  &-item{
+    margin: 2px 0;
+  }
+  &-link{
+    color: map-get($colors, secondary-dark);
+    padding: 2px 0;
+    display: block;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+    &:hover, &:focus{
+      color: map-get($colors, accent-dark);
+    }
+  }
+}
+
+
+.wp-pagenavi{
+  text-align: center;
+  margin-top: 10px;
+  a, span{
+    @include h3;
+    border: none;
+    color: map-get($colors, secondary-extraLight);
+    margin: 0 10px;
+  }
+  .page{
+    border-bottom: 6px solid transparent;
+  }
+  a{
+    transition: 0.2s ease-in-out;
+    &:hover{
+      color: map-get($colors, accent);
+      border-color: transparent;
+    }
+  }
+  span.current{
+    color: map-get($colors, accent);
+    border-bottom: 6px solid map-get($colors, accent);
+  }
+}

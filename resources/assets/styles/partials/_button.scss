@@ -1,0 +1,56 @@
+.btn{
+  @include button-text;
+  display: inline-flex;
+  color: map-get($colors, accent-dark);
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid map-get($colors, accent-dark);
+  border-radius: 4px;
+  padding: 11px 20px;
+  min-width: 160px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  transition: 0.2s ease-in-out;
+  white-space: nowrap;
+  &:hover{
+    background: map-get($colors, accent);
+    border-color: map-get($colors, accent);
+    color: map-get($colors, light);
+  }
+  &:active, &:focus{
+    background: map-get($colors, accent-dark);
+    border-color: map-get($colors, accent-dark);
+    color: map-get($colors, light);
+    outline: none;
+  }
+  &--small{
+    padding: 3px;
+    width: 160px;
+    height: 40px;
+    @media only screen and (max-width: 992px) {
+      height: 32px;
+    }
+  }
+  &--medium{
+    padding: 3px;
+    width: 188px;
+    height: 48px;
+  }
+  &--large{
+    padding: 3px;
+    width: 240px;
+    height: 48px;
+  }
+  &--full{
+    background-color: map-get($colors, accent);
+    color: map-get($colors, light);
+    border: 1px solid map-get($colors, accent);
+    &:hover{
+      background-color: map-get($colors, light);
+      color: map-get($colors, accent);
+    }
+  }
+}

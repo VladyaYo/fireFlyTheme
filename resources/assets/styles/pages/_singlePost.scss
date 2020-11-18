@@ -1,0 +1,194 @@
+.singlePost{
+  padding-bottom: 60px;
+  &-header{
+    width: 100%;
+    height: 320px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    color: map-get($colors, light);
+    margin-bottom: 32px;
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .container{
+      position: relative;
+      height: 100%;
+    }
+    .backBtn{
+      position: absolute;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      top: 10px;
+      left: 0;
+      color: map-get($colors, light);
+      transition: 0.2s ease-in-out;
+      svg{
+        margin-right: 5px;
+      }
+      &:hover{
+        color: map-get($colors, accent-dark);
+      }
+      &:focus{
+        outline: none;
+      }
+    }
+    .singlePost-wrapper{
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &-categories{
+    @include caption-text;
+    text-transform: uppercase;
+    color: map-get($colors, light);
+    margin-bottom: 8px;
+  }
+  &-title{
+    margin-bottom: 24px;
+  }
+  &-date{
+    @include caption-text;
+  }
+  &-wrapper{
+    width: 660px;
+    padding: 0 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  &-navigation{
+    .nav-links{
+      display: flex;
+      justify-content: space-between;
+    }
+    .nav-previous, .nav-next{
+      width: calc(50% - 15px);
+      min-width: calc(50% - 15px);
+      a{
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 56px;
+        @include caption-text;
+        border: 1px solid map-get($colors, accent);
+        border-radius: 8px;
+        padding: 10px 16px;
+        color: map-get($colors, accent);
+        text-decoration: none;
+        transition: 0.2s ease-in-out;
+        &:before{
+          content: "";
+          display: block;
+          position: absolute;
+          background-position: center center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 16px;
+          height: 16px;
+          top: 50%;
+          margin-top: -8px;
+          transition: 0.2s ease-in-out;
+        }
+        &:hover{
+          background-color: map-get($colors, accent);
+          color: map-get($colors, light);
+        }
+      }
+    }
+    .nav-previous{
+      a{
+        padding-left: 48px;
+        &:before{
+          left: 24px;
+          background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.80912 7.99995L10.781 4.0312C11.0747 3.73745 11.0747 3.26245 10.781 2.97183C10.4872 2.67808 10.0122 2.6812 9.71849 2.97183L5.21849 7.4687C4.93412 7.75308 4.92787 8.20933 5.19662 8.50308L9.71536 13.0312C9.86224 13.1781 10.056 13.25 10.2466 13.25C10.4372 13.25 10.631 13.1781 10.7779 13.0312C11.0716 12.7375 11.0716 12.2625 10.7779 11.9718L6.80912 7.99995Z' fill='%2361CD78'/%3E%3C/svg%3E%0A");
+        }
+        &:hover{
+          //padding-left: 16px;
+          &:before{
+            left: -32px;
+          }
+        }
+      }
+    }
+    .nav-next{
+      a{
+        padding-right: 48px;
+        text-align: right;
+        &:before{
+          right: 24px;
+          background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.19218 8L5.22031 4.03125C4.92656 3.7375 4.92656 3.2625 5.22031 2.97188C5.51406 2.68125 5.98906 2.68125 6.28281 2.97188L10.7828 7.46875C11.0672 7.75313 11.0734 8.20938 10.8047 8.50313L6.28594 13.0312C6.13906 13.1781 5.94531 13.25 5.75469 13.25C5.56406 13.25 5.37031 13.1781 5.22344 13.0312C4.92969 12.7375 4.92969 12.2625 5.22344 11.9719L9.19218 8Z' fill='%2361CD78'/%3E%3C/svg%3E%0A");
+        }
+        &:hover{
+          //padding-right: 16px;
+           &:before{
+             right: -32px;
+           }
+         }
+      }
+    }
+  }
+  &-info{
+    @include caption-text;
+    margin-bottom: 32px;
+    a{
+      color: map-get($colors, accent);
+      text-decoration: none;
+      transition: 0.2s ease-in-out;
+      &:hover{
+        color: map-get($colors, accent-dark);
+      }
+    }
+  }
+  &-content{
+    margin-bottom: 20px;
+    h4{
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
+    h1, h2, h3, h5, h6{
+      margin-bottom: 16px;
+      margin-top: 32px;
+    }
+    p{
+      margin: 16px 0;
+    }
+    img{
+      margin: 8px 0;
+      max-width: 100%;
+      height: auto;
+    }
+    a{
+      color: map-get($colors, accent);
+      text-decoration: none;
+      transition: 0.2s ease-in-out;
+      &:hover{
+        color: map-get($colors, accent-dark);
+      }
+    }
+  }
+}
+
+.screen-reader-text{
+  display: none;
+}

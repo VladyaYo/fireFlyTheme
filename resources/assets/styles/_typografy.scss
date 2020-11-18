@@ -1,0 +1,111 @@
+@mixin h1{
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.15;
+  @media only screen and (max-width: 992px) {
+    font-size: 24px;
+  }
+  @media only screen and (max-width: 576px) {
+    font-size: 22px;
+  }
+}
+@mixin h2{
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 1.5;
+  @media only screen and (max-width: 992px) {
+    font-size: 22px;
+  }
+  @media only screen and (max-width: 576px) {
+    font-size: 20px;
+  }
+}
+@mixin h3{
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.5;
+  @media only screen and (max-width: 992px) {
+    font-size: 20px;
+  }
+  @media only screen and (max-width: 576px) {
+    font-size: 18px;
+  }
+}
+@mixin h4{
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.44;
+  @media only screen and (max-width: 992px) {
+    font-size: 16px;
+  }
+}
+
+@mixin p1{
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 400;
+  @media only screen and (max-width: 992px) {
+    font-size: 18px;
+  }
+  @media only screen and (max-width: 576px) {
+    font-size: 16px;
+  }
+}
+
+@mixin p2{
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  @media only screen and (max-width: 992px) {
+    font-size: 14px;
+  }
+}
+
+@mixin button-text{
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  @media only screen and (max-width: 992px) {
+    font-size: 14px;
+  }
+}
+
+@mixin caption-text{
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+@mixin decorative-text{
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: map-get($colors, secondary-light);
+  @media only screen and (max-width: 992px) {
+    font-size: 40px;
+  }
+  @media only screen and (max-width: 992px) {
+    font-size: 32px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p{
+  margin: 0;
+}
+
+h1{
+  @include h1;
+}
+
+h2{
+  @include h2;
+}
+
+h3{
+  @include h3;
+}
+
+h4{
+  @include h4;
+}

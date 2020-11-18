@@ -1,0 +1,62 @@
+$font-family: 'Ubuntu', 'Arial', sans-serif;
+
+$colors: (
+        light: #ffffff,
+        dark: #202020,
+        accent: #61CD78,
+        accent-dark: #13BE37,
+        accent-light: #D4FFCD,
+        accent2: #2494A4,
+        secondary-light: #C5C5C5,
+        secondary-extraLight: #EBEBEB,
+        secondary-dark: #4F4F4F,
+);
+
+
+@mixin gradient-vertical{
+  background: #24d321; /* Old browsers */
+  background: -moz-linear-gradient(top,  #24d321 0%, #56bffc 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #24d321 0%,#56bffc 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #24d321 0%,#56bffc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#24d321', endColorstr='#56bffc',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin gradient-horizontal{
+  background: #24d321; /* Old browsers */
+  background: -moz-linear-gradient(left,  #24d321 0%, #56bffc 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #24d321 0%,#56bffc 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #24d321 0%,#56bffc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#24d321', endColorstr='#56bffc',GradientType=1 ); /* IE6-9 */
+}
+$phone: '(min-width: 320px) and (max-width: 667px)';
+$phone-land: '(min-width: 320px) and (max-width: 667px) and (orientation: landscape)';
+$tablet-portrait: '(max-width: 1024px)';
+$tablet-landscape: '(min-width: 768px) and (max-width: 1024px) and (orientation: landscape)';
+$interval-back: '(max-width: 1300px)';
+$interval: '(max-width: 1200px)';
+$large-desktop: '(max-width: 1919px)';
+$full-desktop: '(min-width: 1920px)';
+$uhd-desktop: '(min-width: 2500px)';
+$toSmallDesc: '(max-width: 1920px)';
+$retina: '(min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx)';
+$small-phone: '(max-width: 350px)';
+@mixin respond-to($media) {
+  @media screen and #{$media} {
+    @content;
+  }
+}
+
+$row: row;
+$col: column;
+$center: center;
+$around: space-around;
+$btwen: space-between;
+$start: flex-start;
+$end: flex-end;
+
+@mixin flex($direction,$justify,$align) {
+  display: flex;
+  flex-flow: #{$direction} wrap;
+  justify-content: #{$justify};
+  align-items: #{$align};
+}

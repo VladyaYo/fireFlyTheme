@@ -1,0 +1,81 @@
+.project{
+  display: inline-flex;
+  width: 570px;
+  max-width: 100%;
+  align-items: stretch;
+  justify-content: flex-start;
+  &-img{
+    display: block;
+    min-width: 270px;
+    width: 270px;
+    height: 270px;
+    margin-right: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      background-color: map-get($colors, accent);
+      transition: 0.2s ease-in-out;
+    }
+    &:hover:before{
+      opacity: 0.2;
+    }
+  }
+  &-content{
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &-title{
+    color: map-get($colors, secondary-dark);
+    padding-bottom: 16px;
+  }
+  &-description{
+    flex-grow: 1;
+    color: map-get($colors, secondary-dark);
+  }
+  &-link{
+    @include button-text;
+    color: map-get($colors, accent);
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid transparent;
+    transition: 0.2s ease-in-out;
+    &:hover{
+      border-color: map-get($colors, accent);
+    }
+  }
+  &-date{
+    @include caption-text;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 16px;
+    text-transform: lowercase;
+    line-height: 1;
+    left: 16px;
+    border-radius: 8px;
+    background-color: map-get($colors, light);
+    color: map-get($colors, accent-dark);
+  }
+}

@@ -1,0 +1,81 @@
+.page404{
+  padding-top: 160px;
+  &-subheading{
+    width: 210px;
+    max-width: 100%;
+  }
+  &-wrapper{
+    width: 510px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  &-main{
+    position: relative;
+    span{
+      font-size: 283px;
+      color: map-get($colors, light);
+      text-shadow: 0px 0px 47px #EAEAEA;
+      font-weight: 700;
+    }
+  }
+  &-line{
+    position: absolute;
+    right: 65px;
+    top: 40px;
+    z-index: -1;
+    path{
+      stroke-dasharray: 1257;
+      stroke-dashoffset: 1257;
+      animation: dash 2s linear forwards;
+    }
+  }
+  &-lamp{
+    position: absolute;
+    right: 10px;
+    top: -80px;
+    .yellow{
+
+      animation-name: blinker;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(1.0,0,0.5,1.0);
+      animation-duration: 0.5s;
+      animation-delay: 2s;
+    }
+    .orange{
+      animation-name: blinker2;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(1.0,0,0.5,1.0);
+      animation-duration: 0.5s;
+      animation-delay: 2s;
+    }
+
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1257;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes blinker {
+  from {
+    fill: #F0F0F0;
+  }
+  to {
+    fill: #FFF59D;
+  }
+}
+
+@keyframes blinker2 {
+  from {
+    fill: #E9E9E9;
+  }
+  to {
+    fill: #FFE86D;
+  }
+}

@@ -1,0 +1,177 @@
+.mainSection{
+  padding-top: 20px;
+  padding-bottom: 90px;
+  &-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-left{
+    margin-right: 115px;
+    flex-basis: 400px;
+    max-width: 100%;
+  }
+  &-right{
+    position: relative;
+    width: 570px;
+    height: 380px;
+  }
+  &-heading{
+    color: map-get($colors, accent-dark);
+    padding-bottom: 28px;
+  }
+  &-description{
+    @include p1;
+  }
+  &-decorative{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &-item{
+    position: absolute;
+    border-radius: 50%;
+    display: block;
+    width: 117px;
+    height: 117px;
+    overflow: hidden;
+    &:nth-child(1){
+      bottom: 8px;
+      left: 50px;
+    }
+    &:nth-child(2){
+      width: 176px;
+      height: 176px;
+      left: 0;
+      top: 71px;
+    }
+    &:nth-child(3){
+      width: 220px;
+      height: 220px;
+      left: 170px;
+      bottom: 17px;
+    }
+    &:nth-child(4){
+      width: 117px;
+      height: 117px;
+      top: 22px;
+      left: 170px;
+    }
+    &:nth-child(5){
+      width: 176px;
+      height: 176px;
+      bottom: 85px;
+      right: 0;
+    }
+    &:nth-child(6){
+      width: 146px;
+      height: 146px;
+      right: 125px;
+      top: 0;
+    }
+    &--empty{
+      background-color: map-get($colors, secondary-extraLight);
+    }
+    &:nth-last-child(5){
+      width: 13px;
+      height: 13px;
+      top: 73px;
+      left: 147px;
+    }
+    &:nth-last-child(4){
+      width: 35px;
+      height: 35px;
+      top: 77px;
+      right: 81px;
+    }
+    &:nth-last-child(3){
+      width: 55px;
+      height: 55px;
+      right: 128px;
+      bottom: 40px;
+    }
+    &:nth-last-child(2){
+      width: 28px;
+      height: 28px;
+      top: 139px;
+      left: 182px;
+    }
+    &:nth-last-child(1){
+      width: 41px;
+      height: 41px;
+      left: 15px;
+      bottom: 96px;
+    }
+  }
+  &-img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .singleProject-thumbnail img{
+    mask: url("data:image/svg+xml,%3Csvg width='600' height='402' viewBox='0 0 600 402' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M560.078 45.5807C463.234 -58.9644 347.716 50.2022 189.378 41.9676C142.134 39.5105 92.3286 43.3754 55.2639 66.5528C-36.0871 123.677 -8.10734 266.868 94.6116 310.432C181.96 347.477 271.906 384.345 356.323 399.328C448.441 415.677 531.495 354.472 564.117 284.757C598.868 210.493 625.193 115.874 560.078 45.5807Z' fill='%23D4FFCD'/%3E%3C/svg%3E%0A") center center/contain no-repeat;
+  }
+}
+
+.allProjects{
+  padding: 60px 0;
+  &-list{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    &:before{
+      content: "";
+      display: block;
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: map-get($colors, secondary-extraLight);
+      z-index: -1;
+    }
+  }
+  &-item{
+    @include button-text;
+    text-transform: uppercase;
+    transition: 0.2s ease-in-out;
+    padding-bottom: 8px;
+    border-bottom: 2px solid map-get($colors, secondary-extraLight);
+    &:hover{
+      color: map-get($colors, accent);
+      border-color: map-get($colors, accent);
+    }
+    &.active{
+      color: map-get($colors, accent-dark);
+      border-color: map-get($colors, accent-dark);
+    }
+    &--disabled{
+      color: map-get($colors, secondary-extraLight);
+      cursor: not-allowed;
+    }
+    &--enabled{
+      color: map-get($colors, secondary-light);
+      cursor: pointer;
+      &:hover{
+        color: map-get($colors, accent);
+        border-color: map-get($colors, accent);
+      }
+      &.active{
+        color: map-get($colors, accent-dark);
+        border-color: map-get($colors, accent-dark);
+      }
+    }
+  }
+  &-grid{
+    margin: 0 -15px;
+    transition: 0.2s ease-in-out;
+    .project{
+      margin: 0 15px 48px;
+    }
+  }
+}

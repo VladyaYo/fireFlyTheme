@@ -1,0 +1,213 @@
+main.products, main.singleProduct{
+  .top{
+    width: 100%;
+    overflow-x: hidden;
+    .container{
+      p.simplePage-heading{
+        display: inline-block;
+        position: relative;
+        &:before{
+          content: "";
+          position: absolute;
+          right:calc(100% + 20px);
+          top: 40%;
+          height: 1px;
+          width: 20vw;
+          background: linear-gradient(90deg, #56BFFC 0%, #19D116 100%);
+        }
+        &:after{
+          content: "";
+          position: absolute;
+          left:calc(100% + 20px);
+          top: 40%;
+          height: 1px;
+          width: 100vw;
+          background: linear-gradient(90deg, #19D116 0%, #56BFFC 100%);
+        }
+      }
+    }
+  }
+  .postCards{
+    .container{
+      display: flex;
+      flex-flow: row wrap;
+      align-items: start;
+      justify-content: stretch;
+      padding: 40px 0;
+      .card{
+        width: 90%;
+        max-width: 370px;
+        background-color: map-get($colors,light);
+        box-shadow: 0px 0px 47px #EAEAEA;
+        border-radius: 8px;
+        margin: 20px auto 10px;
+        text-decoration: none;
+        transition: .4s ease all;
+        color: map-get($colors,dark);
+
+        &:hover{
+          box-shadow: 0px 4px 47px #858585;
+          .imgWrap{
+            border-radius: 8px 8px 0 0;
+            img{
+              transform: scale(1.05);
+            }
+          }
+        }
+        .imgWrap{
+          height: 340px;
+          width: 100%;
+          overflow: hidden;
+          transition: .3s ease all;
+          img{
+            object-fit: cover;
+            transition: .3s ease all;
+
+          }
+        }
+        .text{
+          padding: 16px 24px 24px;
+          h4{
+            margin-bottom: 14px;
+            color: map-get($colors,dark);
+          }
+          .property{
+            .caption{
+              color: map-get($colors,gray);
+              margin-top: 15px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  .wp-pagenavi{
+    margin: 20px auto;
+  }
+  .content{
+    .container{
+@include flex($row,$btwen,$start);
+      min-height: 650px;
+      .textBlock{
+        width: 90%;
+        max-width: 440px;
+
+       a{
+          border: none;
+          background: none;
+          margin-bottom: 28px;
+         color: #000;
+         text-decoration: none;
+        }
+      }
+      .sliderSide{
+        width: 90%;
+        max-width: 670px;
+        position: relative;
+      .sliderContainer{
+        width: 100vw;
+        position: relative;
+        top: 0;
+        left: 0;
+        overflow-y: hidden;
+        height: 600px;
+        max-width: 56vw;
+        //top: -48px;
+        .swiper-wrapper{
+
+          //width: 90vw;
+          //position: absolute;
+          //left: 0;
+          //top: 0;
+          height: 600px;
+          //overflow: hidden;
+          .imgWrap{
+            width: 100%;
+
+            img{
+              object-fit: cover;
+              width: 100%;
+            }
+          }
+        }
+        .swiper-pagination{
+          position: absolute;
+          left: 20px;
+          bottom: 20px;
+         border-radius: 4px;
+          background-color: #ffffff;
+          z-index: 3;
+          .swiper-pagination-bullet {
+          padding: 7px 5px;
+          text-align: center;
+          line-height: 20px;
+          font-size: 20px;
+          color: #C5C5C5;
+          opacity: 1;
+            cursor: pointer;
+
+        }
+
+        .swiper-pagination-bullet-active {
+          color: #13BE37;
+        }
+      }
+      }
+    }
+    }
+  }
+  .otherProducts{
+
+    .containerProdSlider{
+      //width: 100%;
+      //max-width: 1170px;
+      //margi≥n: auto;
+      overflow: hidden;
+      position: relative;
+      width: 1170px;
+      .card{
+        margin-top: 40px;
+        max-width: 370px;
+      }
+      .buttons{
+        max-width: 110px;
+        @include flex($row,$btwen,$center);
+        position: absolute;
+        right: 0;
+        top: 0px;
+        z-index: 3;
+      }
+      button{
+        border: none;
+        background-color: transparent;
+        transition: .3s ease all;
+        &:hover{
+          cursor: pointer;
+          opacity: .6;
+        }
+      }
+      .swiper-button-next{
+        svg{
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+.page-template-products, .single-products{
+   footer{
+     background-color: transparent;
+     position: relative;
+     z-index: 10;
+     &:before{
+       z-index: -1;
+       content: "";
+       position: absolute;
+       bottom: 0;
+       width: 100%;
+       height: 564px;
+       background: linear-gradient(180deg, rgba(255, 255, 255, 0.26) 11.89%, rgba(74, 207, 102, 0.37) 35.43%, rgba(19, 190, 159, 0.58) 60.62%, rgba(61, 175, 190, 0.75) 81.73%, rgba(61, 140, 190, 0.87) 100%);
+     }
+  }
+}

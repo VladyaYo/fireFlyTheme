@@ -1,0 +1,113 @@
+.block{
+  padding: 60px 0;
+  &-heading{
+    color: map-get($colors, accent-dark);
+    margin-bottom: 8px;
+  }
+  &-description{
+    &.open{
+      .block-short{
+        &:after{
+          display: none;
+        }
+      }
+    }
+  }
+  .btn{
+    margin-top: 48px;
+  }
+  &-btn--mob{
+    display: none;
+  }
+  &-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &-left{
+    width: 500px;
+    max-width: 100%;
+    padding-top: 30px;
+  }
+  &-right{
+    width: 570px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  &-short{
+    p{
+      display: inline;
+    }
+    &:after{
+      content: "...";
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    li {
+      position: relative;
+      padding-left: 36px;
+      margin-bottom: 8px;
+      &:before {
+        content: "";
+        display: inline-block;
+        background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.8293 10.5491L18.8668 9.55929C18.8285 9.51554 18.7684 9.49367 18.7137 9.49367C18.6535 9.49367 18.5988 9.51554 18.5605 9.55929L11.8887 16.2804L9.46055 13.8523C9.4168 13.8085 9.36211 13.7866 9.30742 13.7866C9.25273 13.7866 9.19805 13.8085 9.1543 13.8523L8.18086 14.8257C8.09336 14.9132 8.09336 15.0499 8.18086 15.1374L11.2434 18.1999C11.4402 18.3968 11.6809 18.5116 11.8832 18.5116C12.173 18.5116 12.4246 18.2984 12.5176 18.2109H12.523L19.8348 10.8609C19.9113 10.7679 19.9113 10.6312 19.8293 10.5491Z' fill='%2361CD78'/%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-size: contain;
+        width: 28px;
+        height: 28px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &-btn{
+    display: block;
+    cursor: pointer;
+    width: 50%;
+    color: map-get($colors, accent);
+    transition: 0.2s ease-in-out;
+    margin-top: 24px;
+    &:hover{
+      color: map-get($colors, accent-dark);
+    }
+  }
+  &-caption{
+    width: 500px;
+    color: map-get($colors, secondary-light);
+  }
+  &-extra{
+    display: none;
+  }
+  &--reversed{
+    .block-wrapper{
+      flex-direction: row-reverse;
+    }
+  }
+  &--withCaption{
+    .block-heading{
+      padding-left: 10px;
+    }
+    .block-caption{
+      padding-left: 10px;
+      margin-bottom: 24px;
+    }
+    .block-left{
+      margin-right: 40px;
+      padding-top: 0;
+    }
+  }
+}

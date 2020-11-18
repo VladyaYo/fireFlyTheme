@@ -1,0 +1,63 @@
+.js-Accordion {
+  border-bottom: 1px solid map-get($colors, secondary-extraLight);
+}
+.js-Accordion-title {
+  @include h4;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid map-get($colors, secondary-extraLight);
+  width: 100%;
+  padding: 16px 52px 16px 12px;
+  text-align: left;
+  cursor: pointer;
+  color: map-get($colors, dark);
+  transition: 0.2s ease-in-out;
+  &:before{
+    content: "";
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -14px;
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 16.0824L20.9453 9.13164C21.4594 8.61758 22.2906 8.61758 22.7992 9.13164C23.3078 9.6457 23.3078 10.477 22.7992 10.991L14.9297 18.866C14.432 19.3637 13.6336 19.3746 13.1195 18.9043L5.19531 10.9965C4.93828 10.7395 4.8125 10.4004 4.8125 10.0668C4.8125 9.7332 4.93828 9.39414 5.19531 9.13711C5.70937 8.62305 6.54062 8.62305 7.04922 9.13711L14 16.0824Z' fill='%2313BE37'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.2s ease-in-out;
+  }
+  &.active:before{
+    transform: rotate(180deg);
+  }
+  &:focus{
+    outline: none;
+    background-color: transparent;
+  }
+  &:hover{
+    background-color: rgba(map-get($colors, accent), 0.1);
+  }
+  &.active{
+    background-color: rgba(map-get($colors, accent), 0.2);
+  }
+}
+.js-Accordion-content {
+  height: 0;
+  padding: 0 20px;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+  p, ul{
+    margin: 20px 0;
+  }
+  li{
+    margin: 10px 0;
+  }
+  ul{
+    list-style: initial;
+    padding-left: 1em;
+  }
+  ol{
+    list-style: decimal;
+    padding-left: 1em;
+  }
+}

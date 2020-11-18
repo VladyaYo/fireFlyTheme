@@ -1,0 +1,30 @@
+@import "/../../node_modules/swiper/swiper.scss";
+@import "variables";
+@import "typografy";
+@import "general";
+@import 'partials/button';
+@import 'partials/select';
+@import "partials/header";
+@import "partials/video";
+@import "partials/footer";
+@import "partials/accordion";
+@import "partials/calculator";
+@import "partials/project";
+@import "partials/contactForm";
+@import "partials/block";
+
+
+@import "pages/home";
+@import "pages/projecten";
+@import "pages/singleProject";
+@import "pages/contact";
+@import "pages/aboutUs";
+@import "pages/singlePost";
+@import "pages/industry";
+@import "pages/blog";
+@import "pages/products";
+@import "pages/simplePage";
+@import "pages/page404";
+
+
+@import "media";
